@@ -48,7 +48,7 @@ namespace Space_Race
         int time = 1;
 
              
-        bool sDown = false;
+        bool sDown = false; 
         bool wDown = false;
         bool arrowupDown = false;
         bool arrowdownDown = false;
@@ -68,6 +68,27 @@ namespace Space_Race
 
         public void InitializeGame()
         {
+            time = 1;
+            score = 0;
+            
+
+            meteorList.Clear();
+            //P1
+            player1 = new Rectangle(150, 250, 10, 10);
+            //P2
+            player2 = new Rectangle(450, 250, 10, 10);
+            //timer line
+            timerLine = new Rectangle(300, 0, 10, 300);
+
+
+            // player 1 side
+            Rectangle meteor1 = new Rectangle(0, randValue, meteorhigth, meteorswidth);
+            meteorList.Add(meteor1);
+            //player 2 side
+            Rectangle meteor2 = new Rectangle(310, randValue, meteorhigth, meteorswidth);
+            meteorList.Add(meteor2);
+
+
             titleLabel.Text = "";
             subtitleLabel.Text = "";
             gameTimer.Enabled = true;
